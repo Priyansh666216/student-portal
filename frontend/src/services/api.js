@@ -12,7 +12,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: '/api',                         // proxied to http://localhost:8080/api via vite.config.js
+  baseURL: import.meta.env.VITE_API_URL||'/api',                         // proxied to http://localhost:8080/api via vite.config.js
   headers: { 'Content-Type': 'application/json' },
   timeout: 10000,                          // 10 second timeout
 })
